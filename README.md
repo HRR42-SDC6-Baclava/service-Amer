@@ -1,12 +1,17 @@
-# service-tom
+# service-Amer
 
 > Recommended restaurants page of Zagat
 
 ## Related Projects
 
-  - https://github.com/hrr42-fec5/service-allen
-  - https://github.com/hrr42-fec5/service-camryn
-  - https://github.com/hrr42-fec5/service-alex
+  - https://github.com/HRR42-SDC6-Baclava/dave-service
+  - https://github.com/HRR42-SDC6-Baclava/image-Flora
+
+## Related Projects
+  - READ/GET     /api/restaurants/:restaurantId
+  - CREATE/POST  /api/restaurants
+  - PUT/UPDATE   /api/restaurants/:restaurantId
+  - DELETE       /api/restaurants/:restaurantId
 
 ## Table of Contents
 
