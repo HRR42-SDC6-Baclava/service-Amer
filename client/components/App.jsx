@@ -40,7 +40,7 @@ class App extends React.Component {
     const restaurantId = window.location.href.slice(36);
     $.ajax({
       type: 'GET',
-      url: 'api/restaurants/'+restaurantId,
+      url: 'localhost:3005/api/restaurants/'+restaurantId,
       success: (data) => {
         this.setState({
           genre: data[0].genre,
