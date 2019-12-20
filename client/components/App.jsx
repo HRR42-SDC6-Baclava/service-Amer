@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import axios from 'axios';
 import styled from 'styled-components';
 import Recommendation from './Recommendation.jsx';
 
@@ -37,29 +37,26 @@ class App extends React.Component {
   }
 
   get() {
-    const restaurantId = window.location.href.slice(36);
-    $.ajax({
-      type: 'GET',
-      url: 'api/restaurants/'+restaurantId,
-      success: (data) => {
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let restaurantId = params.get('restaurantId')
+    axios.get(`/api/restaurants/${restaurantId}`)
+      .then((data) => {
         this.setState({
           genre: data[0].genre,
           title: data[0].title,
           recs: data[0].recs
         });
-      },
-      failure: (err) => {
-        console.log(err);
-      }
-    });
+      })
+      .catch(err => console.log(err))
   }
+
 
   render() {
     return (
       <div>
         <Recheader>More {this.state.genre} Near {this.state.title}</Recheader>
         <Allrecs>
-          {this.state.recs.map(rec => <Recommendation rec={rec} genre={this.state.genre}/>)}
+          {this.state.recs.map(rec => <Recommendation rec={rec} genre={this.state.genre} />)}
         </Allrecs>
       </div>
     );
