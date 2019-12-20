@@ -40,11 +40,12 @@ class App extends React.Component {
     let params = new URLSearchParams(document.location.search.substring(1));
     let restaurantId = params.get('restaurantId')
     axios.get(`/api/restaurants/${restaurantId}`)
-      .then((data) => {
+      .then((res) => {
+        const { genre, title, recs } = res.data[0];
         this.setState({
-          genre: data[0].genre,
-          title: data[0].title,
-          recs: data[0].recs
+          genre,
+          title,
+          recs,
         });
       })
       .catch(err => console.log(err))
