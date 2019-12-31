@@ -1,5 +1,5 @@
 {
-  "name": "service-tom",
+  "name": "service-Amer",
   "version": "1.0.0",
   "description": "> Recommended restaurants page of Zagat",
   "main": "webpack.config.js",
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/app.js",
     "dev": "webpack -d --watch",
-    "seed": "node server/db/seed.js"
+    "seed": "node server/db/seed.js",
+    "db-start": "node server/db/cassandra/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,10 @@
     "babel-loader": "^8.0.6",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.3.1",
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "fs": "0.0.1-security",
     "jquery": "^3.4.1",
     "mongoose": "^5.7.13",
     "morgan": "^1.9.1",
