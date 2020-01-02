@@ -18,5 +18,6 @@ client.execute(`CREATE TABLE zagat.recommendations (id int PRIMARY KEY,genre tex
 
 module.exports = client;
 
-// CREATE TABLE zagat.recommendations (id int PRIMARY KEY,genre text,name text,recs text,price test,pics text,text text);
 // COPY recommendations (id,genre,name,pics,price,recs,text) FROM '/Users/roubaishou/Desktop/Coding/HR/HRR42/SDC/service-Amer/server/db/cassandra/csv/recommendations.csv' WITH DELIMITER='|' AND HEADER=TRUE;
+
+

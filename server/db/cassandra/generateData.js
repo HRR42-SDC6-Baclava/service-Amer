@@ -33,7 +33,8 @@ const generateAllRecodes = (fileName, start) => {
         recs.push(rec);
 
       }
-      const data = `${id}|${genre}|${name}|${pics}|${price}|${recs}|${text}\n`;
+      const data = `${id}|${genre}|${name}|[${pics}]|${price}|[${recs}]|${text}\n`;
+
       i++;
       recordsSize--;
 
@@ -54,7 +55,7 @@ const generateAllRecodes = (fileName, start) => {
 
 
 
-generateAllRecodes('recommendations', 0);
+generateAllRecodes('recs', 0);
 
 
 
