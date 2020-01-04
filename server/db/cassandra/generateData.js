@@ -9,7 +9,7 @@ const generateAllRecodes = (fileName, start) => {
   let firstTime = new Date();
   const writeToFile = fs.createWriteStream(path.join(__dirname, `/csv/${fileName}.csv`));
   writeToFile.write('id|genre|name|pics|price|recs|text\n');
-  let recordsSize = 10000000;
+  let recordsSize = 10200000;
   var genres = ['American', 'Asian', 'Mexican', 'Indian'];
   var prices = ['$', '$$', '$$$', '$$$$'];
   let i = start;
@@ -24,12 +24,11 @@ const generateAllRecodes = (fileName, start) => {
       var text = faker.lorem.sentence();
       var m = Math.floor(Math.random() * (10 - 5 + 1) + 5);
       for (var l = 0; l < m; l++) {
-        var picUrl = images[Math.floor((Math.random() * 1000) + 1)];
-        pics.push(picUrl);
+        pics.push(Math.floor((Math.random() * 1000) + 1));
       }
       var k = Math.floor(Math.random() * 6) + 1;
       for (var j = 0; j < k; j++) {
-        var rec = Math.floor((Math.random() * 10000000) + 1);
+        var rec = Math.floor((Math.random() * 10200000) + 1);
         recs.push(rec);
 
       }
@@ -40,7 +39,7 @@ const generateAllRecodes = (fileName, start) => {
 
       if (recordsSize === 0) {
         writeToFile.write(data);
-        console.log("This " + fileName + "file took: " + (new Date() - firstTime) / 1000 + " to generate all data!");
+        console.log("This " + fileName + " file took: " + (new Date() - firstTime) / 1000 + " to generate all data!");
       } else {
         ok = writeToFile.write(data);
       }
@@ -55,7 +54,7 @@ const generateAllRecodes = (fileName, start) => {
 
 
 
-generateAllRecodes('recs', 0);
+generateAllRecodes('recommendations', 0);
 
 
 

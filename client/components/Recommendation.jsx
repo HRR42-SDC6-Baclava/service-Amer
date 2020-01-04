@@ -145,12 +145,12 @@ class Recommendation extends React.Component {
         <Picholder>
           <Picnavleft onClick={this.onLeftClick}></Picnavleft>
           <Pic>
-            <ImageSlide url={ this.props.rec.pics[this.state.imageIndex] }/>
+            <ImageSlide url={ this.props.rec.pics.split(',')[this.state.imageIndex] }/>
           </Pic>
           <Picnavright onClick={this.onRightClick}></Picnavright>
         </Picholder>
         <Recbody>
-          <Rectitle>{this.props.rec.title}</Rectitle>
+          <Rectitle>{this.props.rec.name}</Rectitle>
           <Recprice>{this.props.genre} <span>&#183;</span>  {this.props.rec.price}</Recprice>
           <Zagatrated>
             <Logo><img src="assets/logo.svg"/></Logo>ZAGAT RATED

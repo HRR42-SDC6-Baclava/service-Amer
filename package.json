@@ -8,7 +8,8 @@
     "start": "nodemon server/app.js",
     "dev": "webpack -d --watch",
     "seed": "node server/db/seed.js",
-    "db-start": "node server/db/cassandra/index.js"
+    "db-start": "node server/db/cassandra/index.js",
+    "db-seed": "node server/db/cassandra/seed.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "jquery": "^3.4.1",
     "mongoose": "^5.7.13",
     "morgan": "^1.9.1",
+    "newrelic": "^6.2.0",
     "node": "^13.1.0",
     "nodemon": "^2.0.1",
     "react": "^16.12.0",

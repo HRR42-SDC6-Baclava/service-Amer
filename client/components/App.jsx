@@ -25,7 +25,7 @@ class App extends React.Component {
 
     this.state = {
       genre: '',
-      title: '',
+      name: '',
       recs: []
     };
 
@@ -41,11 +41,11 @@ class App extends React.Component {
     let restaurantId = params.get('restaurantId')
     axios.get(`/api/restaurants/${restaurantId}`)
       .then((res) => {
-        const { genre, title, recs } = res.data[0];
+        const { genre, name, recs } = res.data;
         this.setState({
           genre,
-          title,
-          recs,
+          name,
+          recs
         });
       })
       .catch(err => console.log(err))
@@ -55,7 +55,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Recheader>More {this.state.genre} Near {this.state.title}</Recheader>
+        <Recheader>More {this.state.genre} Near {this.state.name}</Recheader>
         <Allrecs>
           {this.state.recs.map(rec => <Recommendation rec={rec} genre={this.state.genre} />)}
         </Allrecs>
