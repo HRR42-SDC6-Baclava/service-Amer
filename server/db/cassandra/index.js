@@ -1,5 +1,8 @@
 const cassandra = require('cassandra-driver');
-const client = new cassandra.Client({ contactPoints: ['127.0.0.1'], localDataCenter: 'datacenter1', keyspace: 'zagat' });
+const contactpoint = '127.0.0.1' || '172.31.27.109:9042';
+
+const client = new cassandra.Client({ contactPoints: [contactpoint], localDataCenter: 'datacenter1', keyspace: 'zagat', pooling: { maxRequestsPerConnection: 32768
+} });
 
 client.connect((err) => {
   if (err) {
@@ -8,6 +11,5 @@ client.connect((err) => {
     console.log('Cassandra DB is connected!');
   }
 });
-
 
 module.exports = client;
