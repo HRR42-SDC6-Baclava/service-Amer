@@ -1,0 +1,27 @@
+config:
+  target: 'http://127.0.0.1:3005'
+  processor: '../generateForTest.js'
+  phases:
+      - duration: 1
+        arrivalRate: 500
+        rampTo: 1000
+        name: "warm up!!"
+      - duration: 3
+        arrivalRate: 1000
+        name: "Sustained max load!!"
+scenarios:
+  - name: 'GET stress test'
+    flow:
+    - loop:
+      - function: 'getData'
+      - post:
+          url: '/api/restaurants'
+          json:
+            id: '{{ id }}'
+            genre: '{{ genre }}'
+            name: '{{ name }}'
+            text: '{{ text }}'
+            price: '{{ price }}'
+            pics: '{{ pics }}'
+            recs: '{{recs}}'
+      count: 100

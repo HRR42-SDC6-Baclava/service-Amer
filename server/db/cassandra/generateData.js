@@ -1,15 +1,13 @@
 const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
-const images = require('./Images.js')
-
 
 const generateAllRecodes = (fileName, start) => {
   let ok = true;
   let firstTime = new Date();
   const writeToFile = fs.createWriteStream(path.join(__dirname, `/csv/${fileName}.csv`));
   writeToFile.write('id|genre|name|pics|price|recs|text\n');
-  let recordsSize = 10200000;
+  let recordsSize = 10000000;
   var genres = ['American', 'Asian', 'Mexican', 'Indian'];
   var prices = ['$', '$$', '$$$', '$$$$'];
   let i = start;
@@ -28,7 +26,7 @@ const generateAllRecodes = (fileName, start) => {
       }
       var k = Math.floor(Math.random() * 6) + 1;
       for (var j = 0; j < k; j++) {
-        var rec = Math.floor((Math.random() * 10200000) + 1);
+        var rec = Math.floor((Math.random() * 10000000) + 1);
         recs.push(rec);
 
       }

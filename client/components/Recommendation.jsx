@@ -145,7 +145,7 @@ class Recommendation extends React.Component {
         <Picholder>
           <Picnavleft onClick={this.onLeftClick}></Picnavleft>
           <Pic>
-            <ImageSlide url={ this.props.rec.pics.split(',')[this.state.imageIndex] }/>
+            <ImageSlide url={ this.props.rec.pics[this.state.imageIndex] }/>
           </Pic>
           <Picnavright onClick={this.onRightClick}></Picnavright>
         </Picholder>

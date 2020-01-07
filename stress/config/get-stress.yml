@@ -1,0 +1,14 @@
+config:
+  target: 'http://127.0.0.1:3005'
+  processor: '../generateForTest.js'
+  phases:
+      - duration: 1
+        arrivalRate: 1000
+scenarios:
+  - name: 'GET stress test'
+    flow:
+      - loop:
+          - function: 'getId'
+          - get:
+              url: "/api/restaurants/{{ id }}"
+        count: 10
