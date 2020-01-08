@@ -1,3 +1,4 @@
 npm
 node_modules/
 newrelic_agent.log
+server/db/cassandra/csv
