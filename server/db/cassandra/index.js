@@ -1,5 +1,5 @@
 const cassandra = require('cassandra-driver');
-const contactpoint = '127.0.0.1' || '172.31.80.235:9042';
+const contactpoint = '127.0.0.1' || '172.31.83.113:9042';
 
 const client = new cassandra.Client({ contactPoints: [contactpoint], localDataCenter: 'datacenter1', keyspace: 'zagat', pooling: { maxRequestsPerConnection: 32768
 } });
